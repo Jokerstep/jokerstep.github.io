@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>基础环境搭建</title>
+    <title>Hexo主题应用</title>
     <url>/2023/11/15/git/Hexo%E4%B8%BB%E9%A2%98Next/</url>
     <content><![CDATA[<h2 id="Hexo主题next的安装"><a href="#Hexo主题next的安装" class="headerlink" title="Hexo主题next的安装"></a><code>Hexo</code>主题<code>next</code>的安装</h2><h3 id="next主题的下载"><a href="#next主题的下载" class="headerlink" title="next主题的下载"></a><code>next</code>主题的下载</h3><blockquote>
 <p>需要区分<code>主题配置文件</code>和<code>本地仓库配置文件</code>,<code>主题配置文件</code>存放在<code>theme/’主题名‘/_config.yml</code>,<code>本地仓库配置文件</code>存放在<code>hexo init</code>的根路径下</p>
@@ -54,8 +54,6 @@
 <p>此后新建的文件可以直接通过scp上传到目标主机的<code>/xxx/hexo/source/_pose</code>目录下，本地预览无问题后直接发布到<code>GitHub</code>即可</p>
 ]]></content>
       <tags>
-        <tag>npm</tag>
-        <tag>github</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -96,9 +94,9 @@
 <hr>
 ]]></content>
       <tags>
+        <tag>hexo</tag>
         <tag>npm</tag>
         <tag>github</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
