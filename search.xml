@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>scoop包管理器简单用法</title>
+    <url>/2023/11/15/git/scoop%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h1 id="scoop包管理器简单用法"><a href="#scoop包管理器简单用法" class="headerlink" title="scoop包管理器简单用法"></a>scoop包管理器简单用法</h1><ul>
+<li><p>scoop学习</p>
+<blockquote>
+<p><strong>安装</strong></p>
+</blockquote>
+<p><strong>步骤 1：在 PowerShell 中打开远程权限</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="literal">-scope</span> CurrentUser</span><br></pre></td></tr></table></figure>
+
+<p><strong>步骤 2：自定义 Scoop 安装目录</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">irm</span> get.scoop.sh <span class="literal">-outfile</span> <span class="string">&#x27;install.ps1&#x27;</span></span><br><span class="line">.\install.ps1 <span class="literal">-ScoopDir</span> <span class="string">&#x27;Scoop_Path&#x27;</span> <span class="literal">-ScoopGlobalDir</span> <span class="string">&#x27;GlobalScoop_Path&#x27;</span> <span class="literal">-Proxy</span> <span class="string">&#x27;http://&lt;ip:port&gt;&#x27;</span></span><br><span class="line"><span class="comment"># 如</span></span><br><span class="line"><span class="comment"># .\install.ps1 -ScoopDir &#x27;C:\Scoop&#x27; -ScoopGlobalDir &#x27;C:\Program Files&#x27; -NoProxy</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">.\install.ps1 <span class="literal">-ScoopDir</span> <span class="string">&#x27;D:\Scoop&#x27;</span> <span class="literal">-ScoopGlobalDir</span> <span class="string">&#x27;D:\Scoop\Program Files&#x27;</span> <span class="literal">-NoProxy</span></span><br></pre></td></tr></table></figure>
+
+<p> <strong>Scoop</strong> 将默认把所有用户安装的 App 和 <strong>Scoop</strong> 本身置于<code>C:\Users\user_name\scoop</code></p>
+<p>​<br>  <strong>步骤 3：更新 Scoop</strong></p>
+  <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop update</span><br></pre></td></tr></table></figure>
+
+<p>  <strong>步骤4：设置代理</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop config proxy [<span class="type">ip</span>:<span class="type">port</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="Scoop基础操作"><a href="#Scoop基础操作" class="headerlink" title="Scoop基础操作"></a>Scoop基础操作</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment">#保持当前版本</span></span><br><span class="line">scoop hold [<span class="type">package</span> <span class="type">name</span>]</span><br><span class="line"><span class="comment">#删除软件</span></span><br><span class="line">scoop uninstall [<span class="type">package</span> <span class="type">name</span>]</span><br><span class="line"><span class="comment">#更新某个软件</span></span><br><span class="line">scoop update [<span class="type">package</span> <span class="type">name</span>]</span><br><span class="line"><span class="comment">#指定版本号安装</span></span><br><span class="line">scoop install [<span class="type">package</span> <span class="type">name</span>]<span class="selector-tag">@</span>[<span class="type">build</span> <span class="type">number</span>]</span><br><span class="line"><span class="comment">#指定仓库安装</span></span><br><span class="line">scoop install [<span class="type">bucket</span> <span class="type">name</span>]/[<span class="type">package</span> <span class="type">name</span>]</span><br><span class="line"><span class="comment">#查看已安装软件</span></span><br><span class="line">scoop list</span><br><span class="line"><span class="comment">#查看待升级软件</span></span><br><span class="line">scoop status</span><br><span class="line"><span class="comment">#添加额外源</span></span><br><span class="line">scoop bucket add extras</span><br><span class="line"><span class="comment">#常用软件</span></span><br><span class="line">scoop bucket add dorado https://github.com/h404bi/dorado</span><br><span class="line"><span class="comment">#常用软件</span></span><br><span class="line">scoop bucket add kkzzsh https://github.com/kkzzhizhou/scoop<span class="literal">-apps</span></span><br><span class="line"><span class="comment">#代理软件</span></span><br><span class="line">scoop bucket add v2raya https://github.com/v2rayA/v2raya<span class="literal">-scoop</span></span><br><span class="line"><span class="comment">#字体</span></span><br><span class="line">scoop bucket add fonts  https://github.com/matthewjberger/scoop<span class="literal">-nerd-fonts</span></span><br></pre></td></tr></table></figure>
+
+<p>‍</p>
+<p>‍</p>
+<h3 id="重装后恢复"><a href="#重装后恢复" class="headerlink" title="重装后恢复"></a>重装后恢复</h3><blockquote>
+<p>重装系统之后, 如果把原有的scoop文件夹粘贴回去user文件夹,然后在powershell中再次输入<a href="https://jiayaoo3o.github.io/2019/01/30/Windows%E4%B8%8B%E7%9A%84%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A5%9E%E5%99%A8-scoop/">Windows下的软件管理神器:scoop</a>文章中的安装命令,会得到一个<strong>Scoop is already installed</strong>错误,要想正确恢复scoop,根据<a href="https://github.com/lukesampson/scoop/issues/2894">官方回答</a>,请按照以下步骤:</p>
+</blockquote>
+<ol>
+<li><p>重装系统之前,先完整复制用户目录下的scoop文件夹到别的地方</p>
+</li>
+<li><p>重装系统之后,将scoop文件夹粘贴回去用户目录</p>
+</li>
+<li><p>在环境变量设置中,新建一个用户变量,名字为SCOOP,值为当前scoop文件夹的地址,即:</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Users\xxxx\scoop</span><br></pre></td></tr></table></figure></li>
+<li><p>允许脚本执行:</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set-executionpolicy remotesigned -s currentuse</span><br></pre></td></tr></table></figure></li>
+<li><p>双击用户变量中的path,新建一个路径,填入 :</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%SCOOP%\shims</span><br></pre></td></tr></table></figure></li>
+<li><p>管理员权限powershell中运行:</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">scoop reset *</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>即可恢复所有软件的正常使用.</p>
+<p>‍</p>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>Scoop</tag>
+        <tag>Powershell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基础环境搭建</title>
+    <url>/2023/11/15/git/%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h2 id="利用Github-Pages-Hexo-搭建博客系统"><a href="#利用Github-Pages-Hexo-搭建博客系统" class="headerlink" title="利用Github Pages&amp;Hexo 搭建博客系统"></a>利用<code>Github Pages</code>&amp;<code>Hexo</code> 搭建博客系统</h2><span id="more"></span>
+
+<h3 id="Github-Pages设置"><a href="#Github-Pages设置" class="headerlink" title="Github Pages设置"></a><code>Github Pages</code>设置</h3><hr>
+<ul>
+<li>在<code>Github</code>中创建一个新的<code>Repository</code>，命名为 <code>&lt;username&gt;.github.io</code>,<code>&lt;username&gt;</code>为Github的用户名</li>
+<li>使用<code>git</code>链接到对应<code>Repository</code>，新建一个<code>分支</code>用于存放静态文件</li>
+<li>后续同步修改可以通过<code>git</code>直接同步到远程仓库</li>
+</ul>
+<hr>
+<h3 id="npm环境设置"><a href="#npm环境设置" class="headerlink" title="npm环境设置"></a><code>npm</code>环境设置</h3><ul>
+<li>当前在<code>Archlinux</code>下搭建npm环境   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#配置npm淘宝源</span><br><span class="line">npm config set registry https://registry.npmmirror.com/</span><br><span class="line">#更新package</span><br><span class="line">npm update</span><br><span class="line">#安装hexo-cli</span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="Hexo环境设置"><a href="#Hexo环境设置" class="headerlink" title="Hexo环境设置"></a><code>Hexo</code>环境设置</h3><ul>
+<li>完成<code>Hexo</code>安装后，在主机新建<code>Hexo</code>博客项目  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#新建目录</span><br><span class="line">mkdir -p ./hexo</span><br><span class="line">#切换到hexo目录</span><br><span class="line">cd ./hexo</span><br><span class="line">#初始化该目录</span><br><span class="line">hexo init ./</span><br><span class="line">#安装package.json下的依赖包</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>配置Hexo博客的基本信息，修改<code>hexo</code>目录下的<code>_config.yml</code>文件，按需配置</li>
+<li>生成静态页面  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></li>
+<li>生成完成后，使用命令启动本地服务  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
+<li>服务启动后，通过 <code>http://localhost:4000</code> 即可预览博客页面</li>
+</ul>
+<hr>
+<h3 id="Hexo发布服务"><a href="#Hexo发布服务" class="headerlink" title="Hexo发布服务"></a><code>Hexo</code>发布服务</h3><ul>
+<li>安装<code>hexo-deployer-git</code>插件  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>利用<code>Hexo d</code>直接上传到<code>github</code></li>
+<li>打开<code>&lt;username&gt;.github.io</code>即可<br>  此间可能会出现github分支无法合并的问题，请百度</li>
+</ul>
+<hr>
+<h3 id="Hexo主题应用"><a href="#Hexo主题应用" class="headerlink" title="Hexo主题应用"></a><code>Hexo</code>主题应用</h3><ul>
+<li>搜索<code>hexo</code>的主题，在<code>hexo init</code>目录下找到<code>theme</code>文件夹，切换到对应文件夹后git clone该主题仓库</li>
+<li>修改主题仓库中的<code>_config.yaml</code>文件，参考对应主题项目的<code>readme.md</code></li>
+<li>同样在<code>hexo init</code>目录下，修改<code>_config.yml</code>文件，将<code>theme</code>的参数设置为<code>git clone</code>的文件夹名字</li>
+<li>再次<code>hexo clean</code> <code>hexo g</code> <code>hexo d</code> 刷新缓存，生成静态页面，同步到<code>github</code></li>
+</ul>
+<hr>
+<p>未完待续…</p>
+<ul>
+<li><input disabled="" type="checkbox"> 润色修改</li>
+<li><input disabled="" type="checkbox"> 添加github同步详细说明</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>npm</tag>
+        <tag>github</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
