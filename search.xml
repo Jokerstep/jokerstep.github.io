@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>搭建Github图床</title>
+    <url>/2023/11/16/git/Github%20&amp;%20picgo%20markdown%E5%9B%BE%E5%BA%8A%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<h2 id="Github搭建图床"><a href="#Github搭建图床" class="headerlink" title="Github搭建图床"></a><code>Github</code>搭建图床</h2><h3 id="创建新的Github仓库"><a href="#创建新的Github仓库" class="headerlink" title="创建新的Github仓库"></a>创建新的<code>Github</code>仓库</h3><ul>
+<li><p>在<code>Github</code>中创建一个新的仓库<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161009471.png" alt="image.png"></p>
+</li>
+<li><p>填写好仓库名，将仓库状态调整为<code>public</code>，然后直接创建<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161011841.png" alt="image.png"></p>
+</li>
+</ul>
+<hr>
+<h3 id="生成Github的token令牌"><a href="#生成Github的token令牌" class="headerlink" title="生成Github的token令牌"></a>生成<code>Github</code>的<code>token</code>令牌</h3><ul>
+<li><p>完成仓库创建后，需要设定<code>token</code>，在<code>Github</code>页面点击右上角头像，选择设置进入<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161013071.png" alt="image.png"></p>
+</li>
+<li><p>页面左边栏，<code>Developer settings</code>,选择<code>Tokens(classic)</code><br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161015511.png" alt="image.png"></p>
+</li>
+<li><p>生成一个新的<code>token</code>，并调整过期时间，将<code>repo</code>权限全部勾选，然后直接创建<br>  创建的<code>token</code>请妥善保管，页面关闭后就看不见了<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161017016.png" alt="image.png"></p>
+</li>
+</ul>
+<hr>
+<h2 id="使用PicoGo上传图片"><a href="#使用PicoGo上传图片" class="headerlink" title="使用PicoGo上传图片"></a>使用<code>PicoGo</code>上传图片</h2><h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a><code>PicGo</code>安装</h3><ul>
+<li><code>PicGo</code>的安装有多种方式，此教程采用scoop包管理器安装<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install picgo</span><br></pre></td></tr></table></figure></li>
+<li>也可以通过<code>npm</code>，或者是<code>picgo</code>的<a href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">官网</a>下载安装包安装</li>
+</ul>
+<hr>
+<h4 id="PicGo配置"><a href="#PicGo配置" class="headerlink" title="PicGo配置"></a><code>PicGo</code>配置</h4><ul>
+<li><code>Picgo</code>安装完成后，打开软件的<code>图床设置</code>，找到<code>Github</code><br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161027739.png" alt="image.png"><ul>
+<li><code>设定仓库名</code>填写你的<code> &lt;username&gt;/&lt;repository name&gt;</code></li>
+<li><code>设定分支名</code>填写你的主分支名</li>
+<li><code>设定Token</code>填写在生成的<code>token</code></li>
+<li><code>设定存储路径</code>填写任意名称</li>
+<li><code>设定自定义域名</code>可以选择一个加速域名来作为自定义域名，推荐<code>https://cdn.jsdelivr.net/gh/</code>,在此链接后添加<code>&lt;username&gt;/&lt;repository name&gt;@&lt;branch name&gt;</code></li>
+<li>最后设置为默认图床即可</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Picgo上传"><a href="#Picgo上传" class="headerlink" title="Picgo上传"></a><code>Picgo</code>上传</h3><ul>
+<li>使用软件的默认上传比较简单，直接拖拽到<code>Picgo</code>界面即可</li>
+</ul>
+]]></content>
+      <categories>
+        <category>github</category>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>图床</tag>
+        <tag>picgo</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo主题应用</title>
     <url>/2023/11/15/git/Hexo%E4%B8%BB%E9%A2%98Next/</url>
     <content><![CDATA[<h2 id="Hexo主题next的安装"><a href="#Hexo主题next的安装" class="headerlink" title="Hexo主题next的安装"></a><code>Hexo</code>主题<code>next</code>的安装</h2><h3 id="next主题的下载"><a href="#next主题的下载" class="headerlink" title="next主题的下载"></a><code>next</code>主题的下载</h3><blockquote>
