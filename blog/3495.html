@@ -22,30 +22,38 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"jokerstep.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":"ture","version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"ture","style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="利用Hexo在githuab搭建博客系统">
+    <meta name="description" content="利用GitHub搭建免费图床">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo基础环境搭建">
-<meta property="og:url" content="http://jokerstep.github.io/2023/11/14/git/Hexo%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="搭建Github图床">
+<meta property="og:url" content="http://jokerstep.github.io/blog/3495.html">
 <meta property="og:site_name" content="George&#39;s Blog">
-<meta property="og:description" content="利用Hexo在githuab搭建博客系统">
+<meta property="og:description" content="利用GitHub搭建免费图床">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-14T07:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-16T01:33:02.842Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161009471.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161011841.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161013071.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161015511.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161017016.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161027739.png">
+<meta property="article:published_time" content="2023-11-16T01:33:00.000Z">
+<meta property="article:modified_time" content="2023-11-16T02:41:45.564Z">
 <meta property="article:author" content="George">
 <meta property="article:tag" content="github">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="npm">
+<meta property="article:tag" content="图床">
+<meta property="article:tag" content="picgo">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161009471.png">
 
 
-<link rel="canonical" href="http://jokerstep.github.io/2023/11/14/git/Hexo%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+<link rel="canonical" href="http://jokerstep.github.io/blog/3495.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jokerstep.github.io/2023/11/14/git/Hexo%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/","path":"2023/11/14/git/Hexo基础环境搭建/","title":"Hexo基础环境搭建"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jokerstep.github.io/blog/3495.html","path":"blog/3495.html","title":"搭建Github图床"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo基础环境搭建 | George's Blog</title>
+<title>搭建Github图床 | George's Blog</title>
   
 
 
@@ -145,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8Github-Pages-Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">利用Github Pages&amp;Hexo 搭建博客系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-Pages%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">Github Pages设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">npm环境设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">Hexo环境设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">Hexo站点配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo%E5%8F%91%E5%B8%83%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.5.</span> <span class="nav-text">Hexo发布服务</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Github%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A"><span class="nav-number">1.</span> <span class="nav-text">Github搭建图床</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84Github%E4%BB%93%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">创建新的Github仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90Github%E7%9A%84token%E4%BB%A4%E7%89%8C"><span class="nav-number">1.2.</span> <span class="nav-text">生成Github的token令牌</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8PicoGo%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87"><span class="nav-number">2.</span> <span class="nav-text">使用PicoGo上传图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PicGo%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">PicGo安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PicGo%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.1.</span> <span class="nav-text">PicGo配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Picgo%E4%B8%8A%E4%BC%A0"><span class="nav-number">2.2.</span> <span class="nav-text">Picgo上传</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -176,6 +184,11 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Jokerstep" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Jokerstep" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
   <div class="cc-license animated" itemprop="license">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
@@ -201,7 +214,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://jokerstep.github.io/2023/11/14/git/Hexo%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+    <link itemprop="mainEntityOfPage" href="http://jokerstep.github.io/blog/3495.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -214,12 +227,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hexo基础环境搭建 | George's Blog">
-      <meta itemprop="description" content="利用Hexo在githuab搭建博客系统">
+      <meta itemprop="name" content="搭建Github图床 | George's Blog">
+      <meta itemprop="description" content="利用GitHub搭建免费图床">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo基础环境搭建
+          搭建Github图床
         </h1>
 
         <div class="post-meta-container">
@@ -229,15 +242,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-11-14 15:00:00" itemprop="dateCreated datePublished" datetime="2023-11-14T15:00:00+08:00">2023-11-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-16 09:33:02" itemprop="dateModified" datetime="2023-11-16T09:33:02+08:00">2023-11-16</time>
+      <time title="创建时间：2023-11-16 09:33:00 / 修改时间：10:41:45" itemprop="dateCreated datePublished" datetime="2023-11-16T09:33:00+08:00">2023-11-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,7 +252,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+          <a href="/categories/github/" itemprop="url" rel="index"><span itemprop="name">github</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/github/windows/" itemprop="url" rel="index"><span itemprop="name">windows</span></a>
         </span>
     </span>
 
@@ -259,45 +270,49 @@
     </span>
 </div>
 
-            <div class="post-description">利用Hexo在githuab搭建博客系统</div>
+            <div class="post-description">利用GitHub搭建免费图床</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="利用Github-Pages-Hexo-搭建博客系统"><a href="#利用Github-Pages-Hexo-搭建博客系统" class="headerlink" title="利用Github Pages&amp;Hexo 搭建博客系统"></a>利用<code>Github Pages</code>&amp;<code>Hexo</code> 搭建博客系统</h2><h3 id="Github-Pages设置"><a href="#Github-Pages设置" class="headerlink" title="Github Pages设置"></a><code>Github Pages</code>设置</h3><ul>
-<li>在<code>Github</code>中创建一个新的<code>Repository</code>，命名为 <code>&lt;username&gt;.github.io</code>,<code>&lt;username&gt;</code>为Github的用户名</li>
-<li>使用<code>git</code>链接到对应<code>Repository</code>，新建一个<code>分支</code>用于存放静态文件<blockquote>
-<p>注意当前仓库使用的分支是否正确，下文中使用的<code>hexo d</code>命令会自动推送到<code>master</code>分支，可手动切换<code>master</code>为默认分支</p>
-</blockquote>
+    <div class="post-body" itemprop="articleBody"><h2 id="Github搭建图床"><a href="#Github搭建图床" class="headerlink" title="Github搭建图床"></a><code>Github</code>搭建图床</h2><h3 id="创建新的Github仓库"><a href="#创建新的Github仓库" class="headerlink" title="创建新的Github仓库"></a>创建新的<code>Github</code>仓库</h3><ul>
+<li><p>在<code>Github</code>中创建一个新的仓库<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161009471.png" alt="image.png"></p>
+</li>
+<li><p>填写好仓库名，将仓库状态调整为<code>public</code>，然后直接创建<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161011841.png" alt="image.png"></p>
 </li>
 </ul>
 <hr>
-<h3 id="npm环境设置"><a href="#npm环境设置" class="headerlink" title="npm环境设置"></a><code>npm</code>环境设置</h3><ul>
-<li>当前在<code>Archlinux</code>下搭建npm环境   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#配置npm淘宝源</span><br><span class="line">npm config set registry https://registry.npmmirror.com/</span><br><span class="line">#更新package</span><br><span class="line">npm update</span><br><span class="line">#安装hexo-cli</span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+<h3 id="生成Github的token令牌"><a href="#生成Github的token令牌" class="headerlink" title="生成Github的token令牌"></a>生成<code>Github</code>的<code>token</code>令牌</h3><ul>
+<li><p>完成仓库创建后，需要设定<code>token</code>，在<code>Github</code>页面点击右上角头像，选择设置进入<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161013071.png" alt="image.png"></p>
+</li>
+<li><p>页面左边栏，<code>Developer settings</code>,选择<code>Tokens(classic)</code><br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161015511.png" alt="image.png"></p>
+</li>
+<li><p>生成一个新的<code>token</code>，并调整过期时间，将<code>repo</code>权限全部勾选，然后直接创建<br>  创建的<code>token</code>请妥善保管，页面关闭后就看不见了<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161017016.png" alt="image.png"></p>
+</li>
 </ul>
 <hr>
-<h3 id="Hexo环境设置"><a href="#Hexo环境设置" class="headerlink" title="Hexo环境设置"></a><code>Hexo</code>环境设置</h3><ul>
-<li>完成<code>Hexo</code>安装后，在主机新建<code>Hexo</code>博客项目  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#新建目录</span><br><span class="line">mkdir -p ./hexo</span><br><span class="line">#切换到hexo目录</span><br><span class="line">cd ./hexo</span><br><span class="line">#初始化该目录</span><br><span class="line">hexo init ./</span><br><span class="line">#安装package.json下的依赖包</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
-<li>配置Hexo博客的基本信息，修改<code>hexo</code>目录下的<code>_config.yml</code>文件，按需配置</li>
-<li>生成静态页面  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></li>
-<li>生成完成后，使用命令启动本地服务  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
-<li>服务启动后，通过 <code>http://localhost:4000</code> 即可预览博客页面</li>
+<h2 id="使用PicoGo上传图片"><a href="#使用PicoGo上传图片" class="headerlink" title="使用PicoGo上传图片"></a>使用<code>PicoGo</code>上传图片</h2><h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a><code>PicGo</code>安装</h3><ul>
+<li><code>PicGo</code>的安装有多种方式，此教程采用scoop包管理器安装<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install picgo</span><br></pre></td></tr></table></figure></li>
+<li>也可以通过<code>npm</code>，或者是<code>picgo</code>的<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">官网</a>下载安装包安装</li>
 </ul>
 <hr>
-<h3 id="Hexo站点配置"><a href="#Hexo站点配置" class="headerlink" title="Hexo站点配置"></a><code>Hexo</code>站点配置</h3><ul>
-<li>按照<code>hexo</code>的配置文档，填写好<code>#site</code>配置块下的站点信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title:                    <span class="comment">#站点名称</span></span><br><span class="line">subtitle：<span class="string">&#x27;&#x27;</span>              <span class="comment">#副标题</span></span><br><span class="line">description: <span class="string">&#x27;&#x27;</span>           <span class="comment">#介绍</span></span><br><span class="line">keywords:                 <span class="comment">#关键字</span></span><br><span class="line">anthor:                   <span class="comment">#站点作者 </span></span><br><span class="line">language:  Zh-CN          <span class="comment">#站点语言</span></span><br><span class="line">timezone: <span class="string">&#x27;Asia/Shanghai&#x27;</span> <span class="comment">#时区</span></span><br></pre></td></tr></table></figure></li>
-<li>再修改<code># Deployment</code>配置块的<code>deploy</code>参数<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: &#x27;git&#x27;</span><br><span class="line">	repository： git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</span><br><span class="line">	branch: master #分支名由你的github仓库默认分支决定</span><br></pre></td></tr></table></figure></li>
+<h4 id="PicGo配置"><a href="#PicGo配置" class="headerlink" title="PicGo配置"></a><code>PicGo</code>配置</h4><ul>
+<li><code>Picgo</code>安装完成后，打开软件的<code>图床设置</code>，找到<code>Github</code><br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161027739.png" alt="image.png"><ul>
+<li><code>设定仓库名</code>填写你的<code> &lt;username&gt;/&lt;repository name&gt;</code></li>
+<li><code>设定分支名</code>填写你的主分支名</li>
+<li><code>设定Token</code>填写在生成的<code>token</code></li>
+<li><code>设定存储路径</code>填写任意名称</li>
+<li><code>设定自定义域名</code>可以选择一个加速域名来作为自定义域名，推荐<code>https://cdn.jsdelivr.net/gh/</code>,在此链接后添加<code>&lt;username&gt;/&lt;repository name&gt;@&lt;branch name&gt;</code></li>
+<li>最后设置为默认图床即可</li>
+</ul>
+</li>
 </ul>
 <hr>
-<h3 id="Hexo发布服务"><a href="#Hexo发布服务" class="headerlink" title="Hexo发布服务"></a><code>Hexo</code>发布服务</h3><ul>
-<li>安装<code>hexo-deployer-git</code>插件  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li>模块安装完成之后需要修改</li>
-<li>利用<code>Hexo d</code>直接上传到<code>github</code></li>
-<li>打开<code>&lt;username&gt;.github.io</code>即可</li>
+<h3 id="Picgo上传"><a href="#Picgo上传" class="headerlink" title="Picgo上传"></a><code>Picgo</code>上传</h3><ul>
+<li>使用软件的默认上传比较简单，直接拖拽到<code>Picgo</code>界面即可</li>
 </ul>
-<hr>
 
     </div>
 
@@ -315,7 +330,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://jokerstep.github.io/2023/11/14/git/Hexo%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="Hexo基础环境搭建">http://jokerstep.github.io/2023/11/14/git/Hexo基础环境搭建/</a>
+      <a href="http://jokerstep.github.io/blog/3495.html" title="搭建Github图床">http://jokerstep.github.io/blog/3495.html</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -325,19 +340,20 @@
 
           <div class="post-tags">
               <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
-              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-              <a href="/tags/npm/" rel="tag"><i class="fa fa-tag"></i> npm</a>
+              <a href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"><i class="fa fa-tag"></i> 图床</a>
+              <a href="/tags/picgo/" rel="tag"><i class="fa fa-tag"></i> picgo</a>
+              <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/blog/49162.html" rel="prev" title="Hexo主题应用">
+                  <i class="fa fa-angle-left"></i> Hexo主题应用
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/11/15/git/Hexo%E4%B8%BB%E9%A2%98Next/" rel="next" title="Hexo主题应用">
-                  Hexo主题应用 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

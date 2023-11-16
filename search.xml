@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>搭建Github图床</title>
-    <url>/2023/11/16/git/Github%20&amp;%20picgo%20markdown%E5%9B%BE%E5%BA%8A%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0/</url>
+    <url>/blog/3495.html</url>
     <content><![CDATA[<h2 id="Github搭建图床"><a href="#Github搭建图床" class="headerlink" title="Github搭建图床"></a><code>Github</code>搭建图床</h2><h3 id="创建新的Github仓库"><a href="#创建新的Github仓库" class="headerlink" title="创建新的Github仓库"></a>创建新的<code>Github</code>仓库</h3><ul>
 <li><p>在<code>Github</code>中创建一个新的仓库<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161009471.png" alt="image.png"></p>
 </li>
@@ -53,7 +53,7 @@
   </entry>
   <entry>
     <title>Hexo主题应用</title>
-    <url>/2023/11/15/git/Hexo%E4%B8%BB%E9%A2%98Next/</url>
+    <url>/blog/49162.html</url>
     <content><![CDATA[<h2 id="Hexo主题next的安装"><a href="#Hexo主题next的安装" class="headerlink" title="Hexo主题next的安装"></a><code>Hexo</code>主题<code>next</code>的安装</h2><h3 id="next主题的下载"><a href="#next主题的下载" class="headerlink" title="next主题的下载"></a><code>next</code>主题的下载</h3><blockquote>
 <p>需要区分<code>主题配置文件</code>和<code>本地仓库配置文件</code>,<code>主题配置文件</code>存放在<code>theme/’主题名‘/_config.yml</code>,<code>本地仓库配置文件</code>存放在<code>hexo init</code>的根路径下</p>
 </blockquote>
@@ -114,7 +114,7 @@
   </entry>
   <entry>
     <title>Hexo基础环境搭建</title>
-    <url>/2023/11/14/git/Hexo%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <url>/blog/16864.html</url>
     <content><![CDATA[<h2 id="利用Github-Pages-Hexo-搭建博客系统"><a href="#利用Github-Pages-Hexo-搭建博客系统" class="headerlink" title="利用Github Pages&amp;Hexo 搭建博客系统"></a>利用<code>Github Pages</code>&amp;<code>Hexo</code> 搭建博客系统</h2><h3 id="Github-Pages设置"><a href="#Github-Pages设置" class="headerlink" title="Github Pages设置"></a><code>Github Pages</code>设置</h3><ul>
 <li>在<code>Github</code>中创建一个新的<code>Repository</code>，命名为 <code>&lt;username&gt;.github.io</code>,<code>&lt;username&gt;</code>为Github的用户名</li>
 <li>使用<code>git</code>链接到对应<code>Repository</code>，新建一个<code>分支</code>用于存放静态文件<blockquote>
