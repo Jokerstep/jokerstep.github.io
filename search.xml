@@ -53,7 +53,11 @@
 </ul>
 <p>此后新建的文件可以直接通过scp上传到目标主机的<code>/xxx/hexo/source/_pose</code>目录下，本地预览无问题后直接发布到<code>GitHub</code>即可</p>
 ]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
       <tags>
+        <tag>github</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -93,10 +97,13 @@
 </ul>
 <hr>
 ]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
       <tags>
+        <tag>github</tag>
         <tag>hexo</tag>
         <tag>npm</tag>
-        <tag>github</tag>
       </tags>
   </entry>
 </search>
