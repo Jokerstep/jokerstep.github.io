@@ -233,7 +233,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-17 09:30:00 / 修改时间：09:43:00" itemprop="dateCreated datePublished" datetime="2023-11-17T09:30:00+08:00">2023-11-17</time>
+      <time title="创建时间：2023-11-17 09:30:00 / 修改时间：10:05:47" itemprop="dateCreated datePublished" datetime="2023-11-17T09:30:00+08:00">2023-11-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -255,43 +255,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="scoop安装"><a href="#scoop安装" class="headerlink" title="scoop安装"></a>scoop安装</h2><h3 id="步骤-1：在-PowerShell-中打开远程权限"><a href="#步骤-1：在-PowerShell-中打开远程权限" class="headerlink" title="步骤 1：在 PowerShell 中打开远程权限"></a><strong>步骤 1：在 PowerShell 中打开远程权限</strong></h3>  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="literal">-scope</span> CurrentUser</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤-2：自定义-Scoop-安装目录"><a href="#步骤-2：自定义-Scoop-安装目录" class="headerlink" title="步骤 2：自定义 Scoop 安装目录"></a><strong>步骤 2：自定义 Scoop 安装目录</strong></h3>  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">irm</span> get.scoop.sh <span class="literal">-outfile</span> <span class="string">&#x27;install.ps1&#x27;</span></span><br><span class="line">.\install.ps1 <span class="literal">-ScoopDir</span> <span class="string">&#x27;Scoop_Path&#x27;</span> <span class="literal">-ScoopGlobalDir</span> <span class="string">&#x27;GlobalScoop_Path&#x27;</span> <span class="literal">-Proxy</span> <span class="string">&#x27;http://&lt;ip:port&gt;&#x27;</span></span><br><span class="line"><span class="comment"># 如</span></span><br><span class="line"><span class="comment"># .\install.ps1 -ScoopDir &#x27;C:\Scoop&#x27; -ScoopGlobalDir &#x27;C:\Program Files&#x27; -NoProxy</span></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\install.ps1 <span class="literal">-ScoopDir</span> <span class="string">&#x27;D:\Scoop&#x27;</span> <span class="literal">-ScoopGlobalDir</span> <span class="string">&#x27;D:\Scoop\Program Files&#x27;</span> <span class="literal">-NoProxy</span></span><br></pre></td></tr></table></figure>
-
-<p> <strong>Scoop</strong> 将默认把所有用户安装的 App 和 <strong>Scoop</strong> 本身置于<code>C:\Users\user_name\scoop</code></p>
-<p>​</p>
-<h3 id="步骤-3：更新-Scoop及scoop-buckert"><a href="#步骤-3：更新-Scoop及scoop-buckert" class="headerlink" title="步骤 3：更新 Scoop及scoop buckert"></a><strong>步骤 3：更新 Scoop及scoop buckert</strong></h3>  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop update</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤-4：设置scoop代理"><a href="#步骤-4：设置scoop代理" class="headerlink" title="步骤 4：设置scoop代理"></a><strong>步骤 4：设置scoop代理</strong></h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop config proxy [<span class="type">ip</span>:<span class="type">port</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Scoop基础操作"><a href="#Scoop基础操作" class="headerlink" title="Scoop基础操作"></a><strong>Scoop基础操作</strong></h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#保持当前版本</span></span><br><span class="line">scoop hold [<span class="type">package</span> <span class="type">name</span>]</span><br><span class="line"><span class="comment">#删除软件</span></span><br><span class="line">scoop uninstall [<span class="type">package</span> <span class="type">name</span>]</span><br><span class="line"><span class="comment">#更新某个软件</span></span><br><span class="line">scoop update [<span class="type">package</span> <span class="type">name</span>]</span><br><span class="line"><span class="comment">#指定版本号安装</span></span><br><span class="line">scoop install [<span class="type">package</span> <span class="type">name</span>]<span class="selector-tag">@</span>[<span class="type">build</span> <span class="type">number</span>]</span><br><span class="line"><span class="comment">#指定仓库安装</span></span><br><span class="line">scoop install [<span class="type">bucket</span> <span class="type">name</span>]/[<span class="type">package</span> <span class="type">name</span>]</span><br><span class="line"><span class="comment">#查看已安装软件</span></span><br><span class="line">scoop list</span><br><span class="line"><span class="comment">#查看待升级软件</span></span><br><span class="line">scoop status</span><br><span class="line"><span class="comment">#添加额外源</span></span><br><span class="line">scoop bucket add extras</span><br><span class="line"><span class="comment">#常用软件</span></span><br><span class="line">scoop bucket add dorado https://github.com/h404bi/dorado</span><br><span class="line"><span class="comment">#常用软件</span></span><br><span class="line">scoop bucket add kkzzsh https://github.com/kkzzhizhou/scoop<span class="literal">-apps</span></span><br><span class="line"><span class="comment">#代理软件</span></span><br><span class="line">scoop bucket add v2raya https://github.com/v2rayA/v2raya<span class="literal">-scoop</span></span><br><span class="line"><span class="comment">#字体</span></span><br><span class="line">scoop bucket add fonts  https://github.com/matthewjberger/scoop<span class="literal">-nerd-fonts</span></span><br></pre></td></tr></table></figure>
-
-<p>‍</p>
-<p>‍</p>
-<h3 id="系统重装后恢复"><a href="#系统重装后恢复" class="headerlink" title="系统重装后恢复"></a><strong>系统重装后恢复</strong></h3><blockquote>
-<p>重装系统之后, 如果把原有的scoop文件夹粘贴回去user文件夹,然后在powershell中再次输入文章中的安装命令,会得到一个<strong>Scoop is already installed</strong>错误,要想正确恢复scoop,请按照以下步骤:</p>
-</blockquote>
-<ol>
-<li><p>重装系统之前,先完整复制用户目录下的scoop文件夹到别的地方</p>
-</li>
-<li><p>重装系统之后,将scoop文件夹粘贴回去用户目录</p>
-</li>
-<li><p>在环境变量设置中,新建一个用户变量,名字为SCOOP,值为当前scoop文件夹的地址,即:</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xxxx\scoop</span><br></pre></td></tr></table></figure></li>
-<li><p>允许脚本执行:</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-executionpolicy remotesigned -s currentuse</span><br></pre></td></tr></table></figure></li>
-<li><p>双击用户变量中的path,新建一个路径,填入 :</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%SCOOP%\shims</span><br></pre></td></tr></table></figure></li>
-<li><p>管理员权限powershell中运行:</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop reset *</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>即可恢复所有软件的正常使用.</p>
-<p>‍</p>
-
+          <p>Scoop是一款适用于Windows平台的命令行软件（包）管理工具。简单来说，就是可以通过命令行工具（PowerShell、CMD等）实现软件（包）的安装管理等需求，通过简单的代码实现软件的下载、安装、卸载、更新等操作。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/224013425.html">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
