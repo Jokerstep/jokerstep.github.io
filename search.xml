@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Arch Linux shell配置问题</title>
+    <url>/blog/1105369576.html</url>
+    <content><![CDATA[<h2 id="Zsh的卸载问题"><a href="#Zsh的卸载问题" class="headerlink" title="Zsh的卸载问题"></a><code>Zsh</code>的卸载问题</h2><blockquote>
+<p>不知道是不是通病，之前在使用<code>manjaro</code>的时候，也是在出现了某次重启后所有用户都无法登录到桌面，ssh也连接不上，当时没有考虑到zsh的问题，直接拔盘备份重装成<code>Arch Linux</code>了，近期使用发现<code>zsh</code>输入中文状态异常，一番调试无果，直接卸载<code>zsh</code>，之后安装<code>starship</code>完成配置并重启，又遇到同样问题，特此记录</p>
+</blockquote>
+<ul>
+<li>如果在卸载后已经无法登录到系统了，直接进入单用户模式，替换修改<code>/etc/passwd</code>&#x2F;下的<code>Zsh</code>为<code>bash</code>即可</li>
+<li>单用户模式进入方式<br>  系统引导时，选中引导项，按<code>e</code>在<code>quiet</code>字符后追加<code>init=/bin/bash</code> ，然后<code>Ctrl+X</code>直接引导即可进入单用户模式，按照之前教程直接修改<code>/etc/passwd</code>内容即可</li>
+<li>完成修改后<code>reboot -f</code>强制重启即可</li>
+</ul>
+<h2 id="Starship安装配置"><a href="#Starship安装配置" class="headerlink" title="Starship安装配置"></a><code>Starship</code>安装配置</h2><ul>
+<li><code>Starship</code>的安装配置比较简单，官网有各个系统的安装方式，不展开叙述了</li>
+</ul>
+<h2 id="locale-a报错问题"><a href="#locale-a报错问题" class="headerlink" title="locale -a报错问题"></a><code>locale -a</code>报错问题</h2><blockquote>
+<p>最后在安装完成<code>starship</code>时，发现本地化配置还是失败，查看<code>wiki</code>未果，最后发现少了一个<code>glibc locale</code>库，补全即可</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>ArchLinux</tag>
+        <tag>linux</tag>
+        <tag>starship</tag>
+        <tag>zsh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搭建Github图床</title>
     <url>/blog/3495.html</url>
     <content><![CDATA[<h2 id="Github搭建图床"><a href="#Github搭建图床" class="headerlink" title="Github搭建图床"></a><code>Github</code>搭建图床</h2><h3 id="创建新的Github仓库"><a href="#创建新的Github仓库" class="headerlink" title="创建新的Github仓库"></a>创建新的<code>Github</code>仓库</h3><ul>

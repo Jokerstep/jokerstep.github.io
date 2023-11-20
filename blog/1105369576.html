@@ -22,26 +22,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"jokerstep.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":"ture","version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"ture","style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://jokerstep.github.io/tags/index.html">
+    <meta name="description" content="Arch Linux安装Zsh后，卸载Zsh导致用户无法登录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arch Linux shell配置问题">
+<meta property="og:url" content="http://jokerstep.github.io/blog/1105369576.html">
 <meta property="og:site_name" content="George&#39;s Blog">
+<meta property="og:description" content="Arch Linux安装Zsh后，卸载Zsh导致用户无法登录">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-15T06:38:08.000Z">
-<meta property="article:modified_time" content="2023-11-15T06:38:28.104Z">
+<meta property="article:published_time" content="2023-11-20T02:22:00.000Z">
+<meta property="article:modified_time" content="2023-11-20T02:24:44.654Z">
 <meta property="article:author" content="George">
+<meta property="article:tag" content="ArchLinux">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="starship">
+<meta property="article:tag" content="zsh">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://jokerstep.github.io/tags/">
+<link rel="canonical" href="http://jokerstep.github.io/blog/1105369576.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://jokerstep.github.io/tags/index.html","path":"tags/index.html","title":"tags"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jokerstep.github.io/blog/1105369576.html","path":"blog/1105369576.html","title":"Arch Linux shell配置问题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>tags | George's Blog
-</title>
+<title>Arch Linux shell配置问题 | George's Blog</title>
   
 
 
@@ -128,7 +133,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -141,6 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Zsh%E7%9A%84%E5%8D%B8%E8%BD%BD%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">Zsh的卸载问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Starship%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Starship安装配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locale-a%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">locale -a报错问题</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,41 +202,140 @@
 
     </div>
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
 
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+  
 
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
 
-<div class="post-meta-container">
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://jokerstep.github.io/blog/1105369576.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="George">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="George's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Arch Linux shell配置问题 | George's Blog">
+      <meta itemprop="description" content="Arch Linux安装Zsh后，卸载Zsh导致用户无法登录">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Arch Linux shell配置问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-20 10:22:00 / 修改时间：10:24:44" itemprop="dateCreated datePublished" datetime="2023-11-20T10:22:00+08:00">2023-11-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
-</header>
+            <div class="post-description">Arch Linux安装Zsh后，卸载Zsh导致用户无法登录</div>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body"><div class="tag-cloud">
-  <div class="tag-cloud-title">
-    目前共计 12 个标签
-  </div>
-  <div class="tag-cloud-tags">
-    <a href="/tags/ArchLinux/" style="font-size: 12px;" class="tag-cloud-0">ArchLinux</a> <a href="/tags/Powershell/" style="font-size: 12px;" class="tag-cloud-0">Powershell</a> <a href="/tags/Scoop/" style="font-size: 12px;" class="tag-cloud-0">Scoop</a> <a href="/tags/Windows/" style="font-size: 21px;" class="tag-cloud-5">Windows</a> <a href="/tags/github/" style="font-size: 30px;" class="tag-cloud-10">github</a> <a href="/tags/hexo/" style="font-size: 21px;" class="tag-cloud-5">hexo</a> <a href="/tags/linux/" style="font-size: 12px;" class="tag-cloud-0">linux</a> <a href="/tags/npm/" style="font-size: 12px;" class="tag-cloud-0">npm</a> <a href="/tags/picgo/" style="font-size: 12px;" class="tag-cloud-0">picgo</a> <a href="/tags/starship/" style="font-size: 12px;" class="tag-cloud-0">starship</a> <a href="/tags/zsh/" style="font-size: 12px;" class="tag-cloud-0">zsh</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 12px;" class="tag-cloud-0">图床</a>
-  </div>
-</div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Zsh的卸载问题"><a href="#Zsh的卸载问题" class="headerlink" title="Zsh的卸载问题"></a><code>Zsh</code>的卸载问题</h2><blockquote>
+<p>不知道是不是通病，之前在使用<code>manjaro</code>的时候，也是在出现了某次重启后所有用户都无法登录到桌面，ssh也连接不上，当时没有考虑到zsh的问题，直接拔盘备份重装成<code>Arch Linux</code>了，近期使用发现<code>zsh</code>输入中文状态异常，一番调试无果，直接卸载<code>zsh</code>，之后安装<code>starship</code>完成配置并重启，又遇到同样问题，特此记录</p>
+</blockquote>
+<ul>
+<li>如果在卸载后已经无法登录到系统了，直接进入单用户模式，替换修改<code>/etc/passwd</code>&#x2F;下的<code>Zsh</code>为<code>bash</code>即可</li>
+<li>单用户模式进入方式<br>  系统引导时，选中引导项，按<code>e</code>在<code>quiet</code>字符后追加<code>init=/bin/bash</code> ，然后<code>Ctrl+X</code>直接引导即可进入单用户模式，按照之前教程直接修改<code>/etc/passwd</code>内容即可</li>
+<li>完成修改后<code>reboot -f</code>强制重启即可</li>
+</ul>
+<h2 id="Starship安装配置"><a href="#Starship安装配置" class="headerlink" title="Starship安装配置"></a><code>Starship</code>安装配置</h2><ul>
+<li><code>Starship</code>的安装配置比较简单，官网有各个系统的安装方式，不展开叙述了</li>
+</ul>
+<h2 id="locale-a报错问题"><a href="#locale-a报错问题" class="headerlink" title="locale -a报错问题"></a><code>locale -a</code>报错问题</h2><blockquote>
+<p>最后在安装完成<code>starship</code>时，发现本地化配置还是失败，查看<code>wiki</code>未果，最后发现少了一个<code>glibc locale</code>库，补全即可</p>
+</blockquote>
 
-      </div>
-      
-      
-      
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>George
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://jokerstep.github.io/blog/1105369576.html" title="Arch Linux shell配置问题">http://jokerstep.github.io/blog/1105369576.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ArchLinux/" rel="tag"><i class="fa fa-tag"></i> ArchLinux</a>
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/starship/" rel="tag"><i class="fa fa-tag"></i> starship</a>
+              <a href="/tags/zsh/" rel="tag"><i class="fa fa-tag"></i> zsh</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/224013425.html" rel="prev" title="scoop包管理器简单用法">
+                  <i class="fa fa-angle-left"></i> scoop包管理器简单用法
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
 </div>
