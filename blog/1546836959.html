@@ -22,38 +22,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"jokerstep.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"ture","style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="利用GitHub搭建免费图床">
+    <meta name="description" content="简单了解一下Windows 系统下的符号链接（Symbolic Link）和硬链接（Hard Link）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建Github图床">
-<meta property="og:url" content="http://jokerstep.github.io/blog/3495.html">
+<meta property="og:title" content="Windows创建硬链接和符号链接">
+<meta property="og:url" content="http://jokerstep.github.io/blog/1546836959.html">
 <meta property="og:site_name" content="George&#39;s Blog">
-<meta property="og:description" content="利用GitHub搭建免费图床">
+<meta property="og:description" content="简单了解一下Windows 系统下的符号链接（Symbolic Link）和硬链接（Hard Link）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161009471.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161011841.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161013071.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161015511.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161017016.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161027739.png">
-<meta property="article:published_time" content="2023-11-16T01:33:00.000Z">
-<meta property="article:modified_time" content="2023-11-17T08:02:16.294Z">
+<meta property="article:published_time" content="2023-11-20T11:56:00.000Z">
+<meta property="article:modified_time" content="2023-11-22T02:10:59.677Z">
 <meta property="article:author" content="George">
 <meta property="article:tag" content="Windows">
-<meta property="article:tag" content="github">
-<meta property="article:tag" content="图床">
-<meta property="article:tag" content="picgo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161009471.png">
 
 
-<link rel="canonical" href="http://jokerstep.github.io/blog/3495.html">
+<link rel="canonical" href="http://jokerstep.github.io/blog/1546836959.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jokerstep.github.io/blog/3495.html","path":"blog/3495.html","title":"搭建Github图床"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://jokerstep.github.io/blog/1546836959.html","path":"blog/1546836959.html","title":"Windows创建硬链接和符号链接"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>搭建Github图床 | George's Blog</title>
+<title>Windows创建硬链接和符号链接 | George's Blog</title>
   
 
 
@@ -153,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Github%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A"><span class="nav-number">1.</span> <span class="nav-text">Github搭建图床</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84Github%E4%BB%93%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">创建新的Github仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90Github%E7%9A%84token%E4%BB%A4%E7%89%8C"><span class="nav-number">1.2.</span> <span class="nav-text">生成Github的token令牌</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8PicoGo%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87"><span class="nav-number">2.</span> <span class="nav-text">使用PicoGo上传图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PicGo%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">PicGo安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PicGo%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.1.</span> <span class="nav-text">PicGo配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Picgo%E4%B8%8A%E4%BC%A0"><span class="nav-number">2.2.</span> <span class="nav-text">Picgo上传</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%BD%A2%E5%BC%8F%E7%9A%84%E6%96%87%E4%BB%B6%E9%93%BE%E6%8E%A5%E7%89%B9%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">两种形式的文件链接特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5"><span class="nav-number">1.1.</span> <span class="nav-text">符号链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.</span> <span class="nav-text">硬链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%BE%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">使用举例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8git%E6%9D%A5%E7%AE%A1%E7%90%86%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%8C%E4%B8%94%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%A7%BB%E5%8A%A8%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">2.1.</span> <span class="nav-text">使用git来管理本地配置文件，且配置文件无法移动的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8OneDrive%E5%A4%87%E4%BB%BD%E8%BD%AF%E4%BB%B6%E6%95%B0%E6%8D%AE"><span class="nav-number">2.2.</span> <span class="nav-text">使用OneDrive备份软件数据</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://jokerstep.github.io/blog/3495.html">
+    <link itemprop="mainEntityOfPage" href="http://jokerstep.github.io/blog/1546836959.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -233,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="搭建Github图床 | George's Blog">
-      <meta itemprop="description" content="利用GitHub搭建免费图床">
+      <meta itemprop="name" content="Windows创建硬链接和符号链接 | George's Blog">
+      <meta itemprop="description" content="简单了解一下Windows 系统下的符号链接（Symbolic Link）和硬链接（Hard Link）">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          搭建Github图床
+          Windows创建硬链接和符号链接
         </h1>
 
         <div class="post-meta-container">
@@ -249,14 +239,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-11-16 09:33:00" itemprop="dateCreated datePublished" datetime="2023-11-16T09:33:00+08:00">2023-11-16</time>
+      <time title="创建时间：2023-11-20 19:56:00" itemprop="dateCreated datePublished" datetime="2023-11-20T19:56:00+08:00">2023-11-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-17 16:02:16" itemprop="dateModified" datetime="2023-11-17T16:02:16+08:00">2023-11-17</time>
+      <time title="修改时间：2023-11-22 10:10:59" itemprop="dateModified" datetime="2023-11-22T10:10:59+08:00">2023-11-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -264,7 +254,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+          <a href="/categories/windows/" itemprop="url" rel="index"><span itemprop="name">windows</span></a>
         </span>
     </span>
 
@@ -278,49 +268,55 @@
     </span>
 </div>
 
-            <div class="post-description">利用GitHub搭建免费图床</div>
+            <div class="post-description">简单了解一下Windows 系统下的符号链接（Symbolic Link）和硬链接（Hard Link）</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="Github搭建图床"><a href="#Github搭建图床" class="headerlink" title="Github搭建图床"></a><code>Github</code>搭建图床</h2><h3 id="创建新的Github仓库"><a href="#创建新的Github仓库" class="headerlink" title="创建新的Github仓库"></a>创建新的<code>Github</code>仓库</h3><ul>
-<li><p>在<code>Github</code>中创建一个新的仓库<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161009471.png" alt="image.png"></p>
-</li>
-<li><p>填写好仓库名，将仓库状态调整为<code>public</code>，然后直接创建<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161011841.png" alt="image.png"></p>
-</li>
-</ul>
-<hr>
-<h3 id="生成Github的token令牌"><a href="#生成Github的token令牌" class="headerlink" title="生成Github的token令牌"></a>生成<code>Github</code>的<code>token</code>令牌</h3><ul>
-<li><p>完成仓库创建后，需要设定<code>token</code>，在<code>Github</code>页面点击右上角头像，选择设置进入<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161013071.png" alt="image.png"></p>
-</li>
-<li><p>页面左边栏，<code>Developer settings</code>,选择<code>Tokens(classic)</code><br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161015511.png" alt="image.png"></p>
-</li>
-<li><p>生成一个新的<code>token</code>，并调整过期时间，将<code>repo</code>权限全部勾选，然后直接创建<br>  创建的<code>token</code>请妥善保管，页面关闭后就看不见了<br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161017016.png" alt="image.png"></p>
+    <div class="post-body" itemprop="articleBody"><h2 id="两种形式的文件链接特性"><a href="#两种形式的文件链接特性" class="headerlink" title="两种形式的文件链接特性"></a>两种形式的文件链接特性</h2><h3 id="符号链接"><a href="#符号链接" class="headerlink" title="符号链接"></a>符号链接</h3><blockquote>
+<p>符号链接则是将自己链接到一个目标文件或目录的路径上。当系统识别到符号链接时，它会跳转到符号链接所指向的目标中去，而不改变此时的文件路径。</p>
+</blockquote>
+<ul>
+<li>使用方法<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">New-Item &quot;引用名称&quot; -ItemType SymbolicLink -Target &quot;绝对路径&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>符号链接像一个虫洞：当用户或应用要访问此虫洞时，就会被传送到符号链接所指向的地方，<strong>但他们是通过虫洞访问此目标的</strong>，所以其路径仍是虫洞自己的路径，这是它和快捷方式在效果上的区别所在。</p>
+</blockquote>
 </li>
 </ul>
-<hr>
-<h2 id="使用PicoGo上传图片"><a href="#使用PicoGo上传图片" class="headerlink" title="使用PicoGo上传图片"></a>使用<code>PicoGo</code>上传图片</h2><h3 id="PicGo安装"><a href="#PicGo安装" class="headerlink" title="PicGo安装"></a><code>PicGo</code>安装</h3><ul>
-<li><code>PicGo</code>的安装有多种方式，此教程采用scoop包管理器安装<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install picgo</span><br></pre></td></tr></table></figure></li>
-<li>也可以通过<code>npm</code>，或者是<code>picgo</code>的<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">官网</a>下载安装包安装</li>
+<p>符号链接具有以下特性：</p>
+<ul>
+<li>**只需要一个路径</li>
+<li>**创建时，它的目标可以是本地的、远程的任何文件或目录，即使目标不存在。</li>
+<li><strong>所做的一切更改都会反映在目标上</strong>。因为打开符号链接，就是打开了目标。复制符号链接，会复制目标的内容。</li>
+<li>移动符号链接，则会移动链接本身。</li>
+<li>更改目标的名称，移动目标的位置，符号链接将会成为死链，因为它无法通过设定的路径找到目标。</li>
+<li>更改符号链接本身的名称和位置，目标不受影响。</li>
+<li>当目标被删除时，符号链接继续存在，但会成为死链，无法打开。</li>
+<li>当符号链接被删除时，它指向的目标不受影响。</li>
 </ul>
-<hr>
-<h4 id="PicGo配置"><a href="#PicGo配置" class="headerlink" title="PicGo配置"></a><code>PicGo</code>配置</h4><ul>
-<li><code>Picgo</code>安装完成后，打开软件的<code>图床设置</code>，找到<code>Github</code><br><img src="https://cdn.jsdelivr.net/gh/Jokerstep/picgo@main/imgs/202311161027739.png" alt="image.png"><ul>
-<li><code>设定仓库名</code>填写你的<code> &lt;username&gt;/&lt;repository name&gt;</code></li>
-<li><code>设定分支名</code>填写你的主分支名</li>
-<li><code>设定Token</code>填写在生成的<code>token</code></li>
-<li><code>设定存储路径</code>填写任意名称</li>
-<li><code>设定自定义域名</code>可以选择一个加速域名来作为自定义域名，推荐<code>https://cdn.jsdelivr.net/gh/</code>,在此链接后添加<code>&lt;username&gt;/&lt;repository name&gt;@&lt;branch name&gt;</code></li>
-<li>最后设置为默认图床即可</li>
+<h3 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h3><blockquote>
+<p>硬链接和符号链接的原理完全不同，符号链接是指向目标路径的链接，而硬链接则是指向目标数据对象的链接。因为一个卷中的数据对象都有一个独一无二文件 ID，也可以说硬链接是指向目标文件 ID 的链接。</p>
+</blockquote>
+<ul>
+<li>使用方法<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">New-Item &quot;引用名称&quot; -ItemType HardLink -Target &quot;绝对路径&quot;</span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
+<p>硬链接具有以下特性：</p>
+<ul>
+<li><strong>硬链接可以看作是一个既有文件的别名</strong></li>
+<li>创建时，它必须指向本地的同一个卷内存在的文件，在 C 盘创建硬链接只能指向 C 盘存在的文件。</li>
+<li>打开硬链接，所做的一切更改都会反映在目标文件上。因为目标文件也链接着被更改的数据。</li>
+<li>更改目标文件的名称、位置，硬链接不会受到影响。更改硬链接的名称、位置，目标文件不受影响，链接不会断开。</li>
+<li>当目标被删除时，硬链接继续存在，且可以正常打开、编辑。因为他具备一个完整的文件结构。</li>
+<li>当硬链接被删除时，目标文件继续存在，不受影响。</li>
 </ul>
-<hr>
-<h3 id="Picgo上传"><a href="#Picgo上传" class="headerlink" title="Picgo上传"></a><code>Picgo</code>上传</h3><ul>
-<li>使用软件的默认上传比较简单，直接拖拽到<code>Picgo</code>界面即可</li>
-</ul>
+<h2 id="使用举例"><a href="#使用举例" class="headerlink" title="使用举例"></a>使用举例</h2><h3 id="使用git来管理本地配置文件，且配置文件无法移动的情况"><a href="#使用git来管理本地配置文件，且配置文件无法移动的情况" class="headerlink" title="使用git来管理本地配置文件，且配置文件无法移动的情况"></a>使用<code>git</code>来管理本地配置文件，且配置文件无法移动的情况</h3><blockquote>
+<p>windows本地的<code>$PROFILE</code>文件，可以使用硬链接到某个git仓库，这样在原有的<code>$PROFILE</code>所做的所有配置可以直接同步到对应仓库</p>
+</blockquote>
+<h3 id="使用OneDrive备份软件数据"><a href="#使用OneDrive备份软件数据" class="headerlink" title="使用OneDrive备份软件数据"></a>使用<code>OneDrive</code>备份软件数据</h3><blockquote>
+<p><code>OneDrive</code>可以直接创建一个管理目录来存放软件数据：比如<code>QQ</code>、<code>wechat</code>等软件的聊天记录，提前在<code>OneDrive</code>中创建目录，再到应用目录中创建链接即可</p>
+</blockquote>
 
     </div>
 
@@ -334,11 +330,11 @@
 <div class="post-copyright">
 <ul>
   <li class="post-copyright-author">
-      <strong>本文作者： </strong>George
+      <strong>原作者： </strong>George
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://jokerstep.github.io/blog/3495.html" title="搭建Github图床">http://jokerstep.github.io/blog/3495.html</a>
+      <a href="http://jokerstep.github.io/blog/1546836959.html" title="Windows创建硬链接和符号链接">http://jokerstep.github.io/blog/1546836959.html</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -348,23 +344,17 @@
 
           <div class="post-tags">
               <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
-              <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
-              <a href="/tags/%E5%9B%BE%E5%BA%8A/" rel="tag"><i class="fa fa-tag"></i> 图床</a>
-              <a href="/tags/picgo/" rel="tag"><i class="fa fa-tag"></i> picgo</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/49162.html" rel="prev" title="Hexo主题应用">
-                  <i class="fa fa-angle-left"></i> Hexo主题应用
+                <a href="/blog/1105369576.html" rel="prev" title="Arch Linux shell配置问题">
+                  <i class="fa fa-angle-left"></i> Arch Linux shell配置问题
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/224013425.html" rel="next" title="scoop包管理器简单用法">
-                  scoop包管理器简单用法 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
