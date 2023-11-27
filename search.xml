@@ -116,6 +116,58 @@
       </tags>
   </entry>
   <entry>
+    <title>Git的用法简介</title>
+    <url>/blog/1551359657.html</url>
+    <content><![CDATA[<p>从仓库覆盖到本地：git fetch –all，git reset –hard <remote>&#x2F;<branch_name></p>
+<ul>
+<li><p>常用 Git 命令：</p>
+<ul>
+<li><code>git init</code>: 初始化一个新的 Git 仓库。</li>
+<li><code>git clone &lt;url&gt;</code>: 克隆一个远程仓库到本地。</li>
+<li><code>git add &lt;file&gt;</code>: 将文件添加到暂存区。</li>
+<li><code>git commit -m &quot;&lt;message&gt;&quot;</code>: 将暂存区的文件提交到本地仓库，并添加提交信息。</li>
+<li><code>git push &lt;remote&gt; &lt;branch&gt;</code>: 将本地仓库的分支推送到远程仓库。</li>
+<li><code>git pull &lt;remote&gt; &lt;branch&gt;</code>: 从远程仓库拉取最新的代码到本地。</li>
+<li><code>git status</code>: 查看当前仓库的状态。</li>
+<li><code>git log</code>: 查看提交历史记录。</li>
+<li><code>git branch</code>: 查看当前仓库的分支。</li>
+<li><code>git checkout &lt;branch&gt;</code>: 切换到指定的分支。</li>
+<li><code>git merge &lt;branch&gt;</code>: 将指定分支合并到当前分支。</li>
+</ul>
+</li>
+<li><p>Git 进阶命令：</p>
+<ul>
+<li><code>git stash</code>: 将当前工作目录的修改保存到一个临时区域，以便稍后恢复。</li>
+<li><code>git rebase</code>: 将当前分支的修改合并到另一个分支上。</li>
+<li><code>git cherry-pick</code>: 将另一个分支上的单个提交合并到当前分支上。</li>
+<li><code>git submodule</code>: 将一个 Git 仓库作为子模块添加到另一个 Git 仓库中。</li>
+<li><code>git reflog</code>: 查看 Git 的引用日志，包括分支、标签等的变更历史。</li>
+<li><code>git bisect</code>: 二分查找 Git 中引入错误的提交。</li>
+</ul>
+</li>
+<li><p>将 Git 仓库的主分支同步到本地分支：</p>
+<ul>
+<li><code>git checkout &lt;local_branch&gt;</code></li>
+<li><code>git fetch origin</code></li>
+<li><code>git reset --hard origin/&lt;main_branch&gt;</code></li>
+</ul>
+</li>
+<li><p>将本地主分支合并到本地其他分支：</p>
+<ul>
+<li><code>git checkout &lt;local_branch&gt;</code></li>
+<li><code>git merge &lt;main_branch&gt;</code></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搭建Github图床</title>
     <url>/blog/3495.html</url>
     <content><![CDATA[<h2 id="Github搭建图床"><a href="#Github搭建图床" class="headerlink" title="Github搭建图床"></a><code>Github</code>搭建图床</h2><h3 id="创建新的Github仓库"><a href="#创建新的Github仓库" class="headerlink" title="创建新的Github仓库"></a>创建新的<code>Github</code>仓库</h3><ul>
